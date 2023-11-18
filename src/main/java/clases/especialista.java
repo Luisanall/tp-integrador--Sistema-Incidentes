@@ -1,4 +1,4 @@
-package org.example;
+package clases;
 
 import lombok.Getter;
 import lombok.Setter;

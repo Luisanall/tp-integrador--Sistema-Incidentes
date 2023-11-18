@@ -1,17 +1,15 @@
-package org.example;
+package metodos;
 
 import clases.tecnico;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-public class Main {
-    public static void main(String[] args) {
-        // metodo para que rrhh realice altas, bajas y/o modificaciones
-        ArrayList<tecnico> tecnicos = new ArrayList <tecnico>();
-        Scanner lector = new Scanner ( System.in );
-        boolean programaActivo = true;
+public class areaRRHH {}
+    // metodo para que rrhh realice altas, bajas y/o modificaciones
+  /*  ArrayList<tecnico> tecnicos = new ArrayList <tecnico>();
+    Scanner lector = new Scanner ( System.in );
+    boolean programaActivo = true;
         do {
 
         System.out.println ( "¿Qué operación quieres realizar?" );
@@ -40,9 +38,9 @@ public class Main {
         } else if (opcion == 5){
 
         }else{
-                System.out.println ("No haz elejido correctamente");
-            }
-        }while (programaActivo);
+            System.out.println ("No haz elejido correctamente");
+        }
+    }while (programaActivo);
 
-    }
-}
+};
+}}*/
