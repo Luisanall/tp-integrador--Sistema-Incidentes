@@ -18,7 +18,7 @@ public class tecnico {
         private String contacto;
         @Setter @Getter
         private int idEspecialista;
-        public tecnico (){
+        public tecnico (int idTenico, String nombre, boolean disponibilidad, int incidentesResueltos, String mail, String contacto , int idEspecialista){
             this.idTenico= idTenico;
             this.nombre = nombre;
             this.disponibilidad =disponibilidad;
