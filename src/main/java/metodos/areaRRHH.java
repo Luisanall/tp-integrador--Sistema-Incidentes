@@ -1,46 +1,68 @@
 package metodos;
 
 import clases.tecnico;
+import lombok.Getter;
+import lombok.Setter;
+
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class areaRRHH {}
-    // metodo para que rrhh realice altas, bajas y/o modificaciones
-  /*  ArrayList<tecnico> tecnicos = new ArrayList <tecnico>();
-    Scanner lector = new Scanner ( System.in );
-    boolean programaActivo = true;
-        do {
+public class areaRRHH {
+    @Getter @Setter
+    private List<tecnico> listaTecnicos;
 
-        System.out.println ( "¿Qué operación quieres realizar?" );
-        System.out.println ( "1 - Alta" );
-        System.out.println ( "2 - Baja " );
-        System.out.println ( "3 - Modificaciones" );
-        System.out.println ( "4 - Consultar" );
-        System.out.println ( "5 - Finalizar" );
-        int opcion = lector.nextInt ();
-        if(opcion == 1){
-            System.out.println ("Introduce los datos");
-            String alta = lector.next ();
-            tecnico tecni = new tecnico (  );
-            tecni.getIdTenico ();
-            tecni.getNombre ();
-            tecni.getMail ();
-            tecni.getContacto ();
-            tecnicos.add ( tecni );
+    public void rrhh() {
+        this.listaTecnicos = new ArrayList<> ();
+    }
 
-        } else if (opcion ==2) {
+    public void altaTecnico() {
+        Scanner lector = new Scanner(System.in);
 
-        } else if (opcion == 3){
+        System.out.println("Ingrese el id del técnico: ");
+        int idTecnico = lector.nextInt();
 
-        } else if (opcion == 4){
+        System.out.println("Ingrese el nombre del técnico: ");
+        String nombre = lector.next();
 
-        } else if (opcion == 5){
+        System.out.println("Ingrese la disponibilidad del técnico: ");
+        boolean disponibilidad = lector.nextBoolean();
 
-        }else{
-            System.out.println ("No haz elejido correctamente");
+        System.out.println("Ingrese la cantidad de incidentes resueltos por el técnico: ");
+        int incidentesResueltos = lector.nextInt();
+
+        System.out.println("Ingrese el correo electrónico del técnico: ");
+        String mail = lector.next();
+
+        System.out.println("Ingrese el teléfono del técnico: ");
+        String contacto = lector.next();
+
+        System.out.println("Ingrese el id del especialista del técnico: ");
+        int idEspecialista = lector.nextInt();
+
+        tecnico tecnico = new tecnico(idTecnico, nombre, disponibilidad, incidentesResueltos, mail, contacto, idEspecialista);
+        listaTecnicos.add(tecnico);
+    }
+
+    public void bajaTecnico() {
+        Scanner lector = new Scanner(System.in);
+
+        System.out.println("Ingrese el nombre del técnico que desea dar de baja: ");
+        String nombre = lector.next();
+
+        for (tecnico tecnico : listaTecnicos) {
+            if (tecnico.getNombre().equals(nombre)) {
+                listaTecnicos.remove(tecnico);
+                break;
+            }
         }
-    }while (programaActivo);
+    }
 
-};
-}}*/
+    public void consultarTecnicos() {
+        for (tecnico tecnico : listaTecnicos) {
+            System.out.println(tecnico);
+        }
+    }
+
+}

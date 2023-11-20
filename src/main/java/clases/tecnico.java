@@ -5,19 +5,19 @@ import lombok.Setter;
 
 public class tecnico {
         @Setter @Getter
-        private int idTenico;
+        int idTenico;
         @Setter @Getter
-        private String nombre;
+        String nombre;
         @Setter @Getter
-        private boolean disponibilidad;
+        boolean disponibilidad;
         @Setter @Getter
-        private int incidentesResueltos;
+        int incidentesResueltos;
         @Setter @Getter
-        private String mail;
+        String mail;
         @Setter @Getter
-        private String contacto;
+        String contacto;
         @Setter @Getter
-        private int idEspecialista;
+        int idEspecialista;
         public tecnico (int idTenico, String nombre, boolean disponibilidad, int incidentesResueltos, String mail, String contacto , int idEspecialista){
             this.idTenico= idTenico;
             this.nombre = nombre;
@@ -25,7 +25,7 @@ public class tecnico {
             this.incidentesResueltos = incidentesResueltos;
             this.mail=mail;
             this.contacto = contacto;
-            this.idEspecialista=idEspecialista;
+            this.idEspecialista= idEspecialista;
         }
     }
 

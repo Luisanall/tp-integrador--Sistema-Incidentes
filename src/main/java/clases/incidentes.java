@@ -27,4 +27,13 @@ public class incidentes {
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
     }
+    public incidentes (String descripcionIncidentes){
+        this.descripcionIncidentes = descripcionIncidentes;
+    }
+    public incidentes (int idIncidentes, String tipoIncidentes){
+        this.idIncidentes = idIncidentes;
+        this.tipoIncidentes= tipoIncidentes;
+    }
+
+
 }

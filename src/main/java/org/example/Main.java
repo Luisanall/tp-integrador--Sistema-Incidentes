@@ -1,72 +1,66 @@
 package org.example;
 
+import clases.incidentes;
 import clases.tecnico;
+import metodos.areaRRHH;
+import metodos.asignarIncidentes;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Main {
     public static void main(String[] args) {
-        // metodo para que rrhh realice altas, bajas y/o modificaciones. No es el definitivo, la idea es hacerlo mas corto y legible
-        ArrayList<tecnico> tecnicos = new ArrayList <tecnico>();
-        Scanner lector = new Scanner ( System.in );
-        boolean programaActivo = true;
-        do {
+     //alta, baja y7o modificacion de tecnico
+        areaRRHH sistema = new areaRRHH ();
+        asignarIncidentes asignacion = new asignarIncidentes ();
+        Scanner lector = new Scanner(System.in);
 
-            System.out.println ( "¿Qué operación quieres realizar?" );
-            System.out.println ( "1 - Alta" );
-            System.out.println ( "2 - Baja " );
-            System.out.println ( "3 - Modificaciones" );
-            System.out.println ( "4 - Consultar" );
-            System.out.println ( "5 - Finalizar" );
+        while (true) {
+            System.out.println ( "¿Qué operación desea realizar?" );
+            System.out.println ( "1 - Alta de técnico" );
+            System.out.println ( "2 - Baja de técnico" );
+            System.out.println ( "3 - Consultar técnicos" );
+            System.out.println ( "4 - Salir" );
+
             int opcion = lector.nextInt ();
-            if(opcion == 1){
-                System.out.println ("Id");
-                int idtecnico = lector.nextInt ();
-                System.out.println ("Nombre");
-                String nombre = lector.next ();
-                System.out.println ("Disponibilidad");
-                boolean disponibilidad = lector.nextBoolean ();
-                System.out.println ("Cantidad de incidentes resueltos");
-                int incidentesResueltos = lector.nextInt ();
-                System.out.println ("Mail");
-                String mail = lector.next ();
-                System.out.println ("Contacto");
-                String contacto = lector.next ();
-                System.out.println ("id Especialista");
-                int idEspecialista = lector.nextInt ();
-                String alta = lector.next ();
-                tecnico tecni = new tecnico ( 1, "Mario", true,5,"mariomartine@gmail.com","3576012",3 );
-                tecnicos.add ( tecni );
-                System.out.println (tecni);
 
-            } else if (opcion ==2) {
-                System.out.println ("Ingrese el nombre del técnico que desea dar de baja");
-                String nombre = lector.next ();
-                Iterator<tecnico> it =tecnicos.iterator ();
-                while (it.hasNext ()){
-                    tecnico tecni= it.next ();
-                    if(tecni.getNombre ().equals ( nombre )){
-                        it.remove ();
-                    }
-                }
-
-            } else if (opcion == 3){
-
-            } else if (opcion == 4){
-                for(tecnico tecni : tecnicos){
-                    System.out.println ("Los datos son:  " + tecni.getIdTenico ()+ " "+ tecni.getNombre () + " "+ tecni.isDisponibilidad ()+" "+ tecni.getIncidentesResueltos () + " "  + tecni.getMail () +" "+ tecni.getContacto ()+ " "+ tecni.getIdEspecialista ());
-                }
-
-            } else if (opcion == 5){
-                programaActivo= false;
-
-            }else{
-                System.out.println ("No haz elejido correctamente");
+            switch (opcion) {
+                case 1:
+                    sistema.altaTecnico ();
+                    break;
+                case 2:
+                    sistema.bajaTecnico ();
+                    break;
+                case 3:
+                    sistema.consultarTecnicos ();
+                    break;
+                case 4:
+                    return;
+                default:
+                    System.out.println ( "Opción no válida" );
             }
-        }while (programaActivo);
+            System.out.println("Ingrese la descripción del incidente: ");
+            String descripcion = lector.nextLine();
+            incidentes incidente = new incidentes (descripcion);
 
+            // Obtenemos las especialidades del incidente
+            System.out.println("Ingrese las especialidades del incidente: ");
+            String especialidades = lector.nextLine();
+            incidente.getTipoIncidentes (especialidades);
+
+            // Obtenemos la lista de técnicos disponibles
+            List<tecnico> tecnicosDisponibles = asignarIncidentes.gettecnicosDisponibles(incidente.getDescripcionIncidentes ());
+
+            // Asignamos el incidente al técnico disponible
+            asignarIncidentes.asignarIncidentes(incidente, tecnicosDisponibles.get(0));
+
+            // Imprimimos la información del incidente
+            System.out.println("El incidente fue asignado al técnico: " + tecnico.getTipoIncidentes ().getNombre());
+        }
+
+
+        }
     }
+
 }
+
