@@ -1,23 +1,33 @@
-package clases;
+package models;
 
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
-
+import java.util.List;
+@Entity
+@Table(name= "INCIDENTE")
+@Getter @Setter
 public class incidentes {
-    @Getter
-    @Setter
+    @Id
+    @Column (name= "id_incidente")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idIncidentes;
-    @Getter @Setter
+
+    @OneToMany
+    @JoinColumn(name = "incidentes_id" , referencedColumnName = "id_incidente")
+    private List<tarea> tareas;
+    @Column
     private String tipoIncidentes;
-    @Getter @Setter
+    @Column
     private String descripcionIncidentes;
-    @Getter @Setter
+    @Column
     private boolean estadoIncidentes;
-    @Getter @Setter
+    @Column
     private Date fecha_inicio;
-    @Getter @Setter
+    @Column
     private Date fecha_fin;
     public incidentes (int idIncidentes,String tipoIncidentes, String descripcionIncidentes, boolean estadoIncidentes, Date fecha_inicio,Date fecha_fin){
         this.idIncidentes = idIncidentes;
@@ -26,6 +36,10 @@ public class incidentes {
         this.estadoIncidentes = estadoIncidentes;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
+    }
+    public  incidentes (){
+        this.tareas = new ArrayList<tarea> ();
+
     }
     public incidentes (String descripcionIncidentes){
         this.descripcionIncidentes = descripcionIncidentes;

@@ -1,7 +1,6 @@
 package org.example;
 
-import clases.incidentes;
-import clases.tecnico;
+import models.incidentes;
 import metodos.areaRRHH;
 import metodos.asignarIncidentes;
 
@@ -9,7 +8,7 @@ import java.util.*;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
      //alta, baja y7o modificacion de tecnico
         areaRRHH sistema = new areaRRHH ();
         asignarIncidentes asignacion = new asignarIncidentes ();
@@ -46,7 +45,7 @@ public class Main {
             // Obtenemos las especialidades del incidente
             System.out.println("Ingrese las especialidades del incidente: ");
             String especialidades = lector.nextLine();
-            incidente.getTipoIncidentes (especialidades);
+            /*incidente.getTipoIncidentes (especialidades);
 
             // Obtenemos la lista de técnicos disponibles
             List<tecnico> tecnicosDisponibles = asignarIncidentes.gettecnicosDisponibles(incidente.getDescripcionIncidentes ());
@@ -57,7 +56,7 @@ public class Main {
             // Imprimimos la información del incidente
             System.out.println("El incidente fue asignado al técnico: " + tecnico.getTipoIncidentes ().getNombre());
         }
-
+*/
 
         }
     }

@@ -1,6 +1,6 @@
 package metodos;
 
-import clases.tecnico;
+import models.tecnico;
 import lombok.Getter;
 import lombok.Setter;
 
