@@ -4,16 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Calendar;
-
+@Getter @Setter
 public class reportes {
-    @Getter
-    @Setter
+
     private int id_reportes;
-    @Getter @Setter
     private String descripcion_incidentes;
-    @Getter @Setter
     private Calendar tiempo_estimado;
-    @Getter @Setter
     private Calendar tiempo_total;
     public reportes(int id_reportes, String descripcion_incidentes,Calendar tiempo_estimado,Calendar tiempo_total){
         this.id_reportes= id_reportes;

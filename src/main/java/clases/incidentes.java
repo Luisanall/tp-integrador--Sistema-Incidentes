@@ -3,21 +3,24 @@ package clases;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
-
+import java.util.List;
+@Getter @Setter
 public class incidentes {
-    @Getter
-    @Setter
+
+    private List<tarea> tareas;
+
     private int idIncidentes;
-    @Getter @Setter
+
     private String tipoIncidentes;
-    @Getter @Setter
+
     private String descripcionIncidentes;
-    @Getter @Setter
+
     private boolean estadoIncidentes;
-    @Getter @Setter
+
     private Date fecha_inicio;
-    @Getter @Setter
+
     private Date fecha_fin;
     public incidentes (int idIncidentes,String tipoIncidentes, String descripcionIncidentes, boolean estadoIncidentes, Date fecha_inicio,Date fecha_fin){
         this.idIncidentes = idIncidentes;
@@ -26,6 +29,10 @@ public class incidentes {
         this.estadoIncidentes = estadoIncidentes;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
+    }
+    public  incidentes (){
+        this.tareas = new ArrayList<tarea> ();
+
     }
     public incidentes (String descripcionIncidentes){
         this.descripcionIncidentes = descripcionIncidentes;

@@ -3,21 +3,21 @@ package clases;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@Setter @Getter
 public class tecnico {
-        @Setter @Getter
+    private List<servicio> listadeServicios;
+
         int idTenico;
-        @Setter @Getter
         String nombre;
-        @Setter @Getter
         boolean disponibilidad;
-        @Setter @Getter
         int incidentesResueltos;
-        @Setter @Getter
         String mail;
-        @Setter @Getter
         String contacto;
-        @Setter @Getter
         int idEspecialista;
+
         public tecnico (int idTenico, String nombre, boolean disponibilidad, int incidentesResueltos, String mail, String contacto , int idEspecialista){
             this.idTenico= idTenico;
             this.nombre = nombre;
@@ -27,6 +27,9 @@ public class tecnico {
             this.contacto = contacto;
             this.idEspecialista= idEspecialista;
         }
+    public tecnico() {
+        this.listadeServicios = new ArrayList<servicio> ();
+    }
     }
 
 

@@ -46,7 +46,7 @@ public class Main {
             // Obtenemos las especialidades del incidente
             System.out.println("Ingrese las especialidades del incidente: ");
             String especialidades = lector.nextLine();
-            incidente.getTipoIncidentes (especialidades);
+            /*incidente.getTipoIncidentes (especialidades);
 
             // Obtenemos la lista de técnicos disponibles
             List<tecnico> tecnicosDisponibles = asignarIncidentes.gettecnicosDisponibles(incidente.getDescripcionIncidentes ());
@@ -57,7 +57,7 @@ public class Main {
             // Imprimimos la información del incidente
             System.out.println("El incidente fue asignado al técnico: " + tecnico.getTipoIncidentes ().getNombre());
         }
-
+*/
 
         }
     }
