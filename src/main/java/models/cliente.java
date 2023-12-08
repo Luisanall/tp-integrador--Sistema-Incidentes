@@ -1,29 +1,22 @@
-package models;
+package clases;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "Cliente")
-@Getter @Setter
 public class cliente {
-    @Id
-    @Column (name= "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     private int idCliente;
-    @Column
+    @Getter @Setter
     private String cuit;
-    @Column
+    @Getter @Setter
     private String razonSocial;
-    @Column
+    @Getter @Setter
     private String emailCliente;
-    @Column
+    @Getter @Setter
     private String modificacion;
-    @Column
+    @Getter @Setter
     private boolean estado;
-
     public cliente(int idCliente, String cuit, String razonSocial, String emailCliente, String modificacion, boolean estado){
         this.idCliente = idCliente;
         this.cuit = cuit;

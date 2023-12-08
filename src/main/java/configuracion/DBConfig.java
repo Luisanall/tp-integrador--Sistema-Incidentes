@@ -10,7 +10,11 @@ public class DBConfig {
     public static EntityManager getEntityManager(){
        if (factory == null)
         factory = Persistence.createEntityManagerFactory ( "JPA_incidentes" );
+<<<<<<< HEAD
        return factory.createEntityManager ();
+=======
+        return factory.createEntityManager ();
+>>>>>>> origin/main
     }
 
 }

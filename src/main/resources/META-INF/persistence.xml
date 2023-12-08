@@ -10,6 +10,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Clases de entidad -->
+<<<<<<< HEAD
         <class>example.hibernate.pyme.models.cliente</class>
         <class>example.hibernate.pyme.models.comercial</class>
         <class>example.hibernate.pyme.models.especialista</class>
@@ -20,15 +21,27 @@
         <class>example.hibernate.pyme.models.servicio</class>
         <class>example.hibernate.pyme.models.tarea</class>
         <class>example.hibernate.pyme.models.tecnico</class>
+=======
+        <class>example.hibernate.pyme.models.Empleado</class>
+        <class>example.hibernate.pyme.models.Direccion</class>
+        <class>example.hibernate.pyme.models.Rol</class>
+        <class>example.hibernate.pyme.models.Sector</class>
+>>>>>>> origin/main
         <properties>
             <!-- Propiedades de configuración de Hibernate -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.connection.url"
                       value="jdbc:mysql://localhost:3306/ormprueba?characterEncoding=utf8"/>
+<<<<<<< HEAD
             <property name="hibernate.connection.username" value="Luisanall"/>
             <property name="hibernate.connection.password" value="L3576012"/>
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+=======
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="Password01"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+>>>>>>> origin/main
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
         </properties>

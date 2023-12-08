@@ -1,21 +1,17 @@
-package models;
+package clases;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name= "COMERCIAL")
-@Getter @Setter
 public class comercial {
-    @Id
-    @Column(name= "id_COMERCIAL")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     private int idComercial;
-    @Column
+    @Getter
+    @Setter
     private boolean estadoCliente;
-    @Column
+    @Getter
+    @Setter
     private  String modificacionClientes;
     public comercial( int idComercial, boolean estadoCliente, String modificacionClientes){
         this.idComercial = idComercial;

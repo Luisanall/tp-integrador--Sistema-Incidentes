@@ -1,23 +1,19 @@
-package models;
+package clases;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
 import java.util.Calendar;
-@Entity
-@Table(name= "REPORTES")
-@Getter @Setter
+
 public class reportes {
-    @Id
-    @Column(name= "id_reportes")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     private int id_reportes;
-    @Column
+    @Getter @Setter
     private String descripcion_incidentes;
-    @Column
+    @Getter @Setter
     private Calendar tiempo_estimado;
-    @Column
+    @Getter @Setter
     private Calendar tiempo_total;
     public reportes(int id_reportes, String descripcion_incidentes,Calendar tiempo_estimado,Calendar tiempo_total){
         this.id_reportes= id_reportes;

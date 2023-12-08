@@ -1,35 +1,23 @@
-package models;
+package clases;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-@Entity
-@Table(name= "TECNICO")
-@Setter @Getter
 public class tecnico {
-        @Id
-        @Column(name= "id_tecnico")
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Setter @Getter
         int idTenico;
-        @OneToMany
-        @JoinColumn(name = "tecnico_id" , referencedColumnName = "id_tecnico")
-        private List<incidentes> listadeIncidentes;
-        @Column
+        @Setter @Getter
         String nombre;
-        @Column
+        @Setter @Getter
         boolean disponibilidad;
-        @Column
+        @Setter @Getter
         int incidentesResueltos;
-        @Column
+        @Setter @Getter
         String mail;
-        @Column
+        @Setter @Getter
         String contacto;
-        @Column
+        @Setter @Getter
         int idEspecialista;
-
         public tecnico (int idTenico, String nombre, boolean disponibilidad, int incidentesResueltos, String mail, String contacto , int idEspecialista){
             this.idTenico= idTenico;
             this.nombre = nombre;
@@ -39,10 +27,6 @@ public class tecnico {
             this.contacto = contacto;
             this.idEspecialista= idEspecialista;
         }
-        public tecnico() {
-            this.listadeIncidentes = new ArrayList<incidentes>();
-
-    }
     }
 
 

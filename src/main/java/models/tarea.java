@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/main/java/models/tarea.java
 package models;
 
 import lombok.Getter;
@@ -16,4 +17,9 @@ public class tarea {
     private int id_tarea;
     @Column
     private String nombretarea;
+=======
+package clases;
+
+public class tarea {
+>>>>>>> origin/main:src/main/java/clases/tarea.java
 }

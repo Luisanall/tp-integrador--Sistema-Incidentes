@@ -1,28 +1,21 @@
-package models;
+package clases;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name= "RRHH")
-@Setter @Getter
 public class rrhh {
-    @Id
-    @Column(name= "id_rrhh")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_RRHH;
-    @Column
+    @Setter
+    @Getter
+    private int id;
+    @Setter @Getter
     private int tecnico_id;
-    @Column
+    @Setter @Getter
     private int incidente_id;
-    @Column
+    @Setter @Getter
     private boolean estado_incidente;
 
-
     public rrhh(int id, int tecnico_id, int incidente_id, boolean estado_incidente){
-        this.id_RRHH= id;
+        this.id= id;
         this.tecnico_id= tecnico_id;
         this.incidente_id= incidente_id;
         this.estado_incidente= estado_incidente;
